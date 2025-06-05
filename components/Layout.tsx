@@ -8,10 +8,6 @@ type LayoutProps = {
 };
 
 const Layout = memo<LayoutProps>(({ title = 'Bike App', children }) => {
-	const [loading, setLoading] = useState(false);
-
-	if (loading) return <Layout title="Loading..."><p>Loading...</p></Layout>;
-
 	return (
 		<>
 			<Head>
@@ -21,8 +17,8 @@ const Layout = memo<LayoutProps>(({ title = 'Bike App', children }) => {
 			<header style={{ padding: '10px', background: '#f5f5f5', marginBottom: '10px' }}>
 				<h1 style={{ margin: 0 }}>{title}</h1>
 				<nav style={{ marginTop: '5px' }}>
-					<Link href="/" onClick={() => setLoading(true)} style={{ marginRight: 10 }}>Home</Link>
-					<Link href="/bikes" onClick={() => setLoading(true)}>Bikes</Link>
+					<Link href="/" style={{ marginRight: 10 }}>Home</Link>
+					<Link href="/bikes">Bikes</Link>
 				</nav>
 			</header>
 			<main style={{ padding: '10px' }}>{children}</main>
