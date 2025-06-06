@@ -19,7 +19,7 @@ type BikesPageProps = {
 
 const BikesPage = memo<BikesPageProps>(({ bikes }) => {
 	return (
-		<Layout title="Bikes">
+		<Layout title="Bikes" isLoading={bikes.length <= 0}>
 			<h2>Numărul bicicletei</h2>
 			{bikes.length === 0 ? (
 				<p>No bikes found.</p>

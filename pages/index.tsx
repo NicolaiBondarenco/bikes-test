@@ -7,10 +7,8 @@ import styles from "./index.module.scss";
 const HomePage = () => {
 	const [loading, setLoading] = useState(false);
 
-	if (loading) return <Layout title="Loading..."><p>Loading...</p></Layout>;
-
 	return (
-		<Layout title="Actiune">
+		<Layout title="Actiune" isLoading={loading}>
 			<Link href="/bikes"
 			  onClick={() => setLoading(true)}
 			  className={styles.link}

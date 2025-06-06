@@ -65,7 +65,7 @@ const BikeDetailPage = () => {
 	if (!bike) return <Layout title="Error"><p>Bike not found</p></Layout>;
 
 	return (
-		<Layout title={`Bike #${bike.id}`}>
+		<Layout title={`Bike #${bike.id}`} isLoading={!bike}>
 			<p><strong>Brand:</strong> {bike.brand}</p>
 			<p><strong>Status:</strong> {bike.status}</p>
 
