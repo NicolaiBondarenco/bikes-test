@@ -36,6 +36,9 @@ const Layout = memo<LayoutProps>(({ isLoading = false, title = 'Bike App', child
 			<Head>
 				<title>{title}</title>
 				<meta name="description" content="Next.js Bike Manager with Google Sheets" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" />
+				<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 			</Head>
 			<header className={styles.header}>
 				<h1 className={styles.title}>{isPageLoading ? 'Loading...' : title}</h1>
