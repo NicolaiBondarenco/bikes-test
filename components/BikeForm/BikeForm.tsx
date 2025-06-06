@@ -1,4 +1,7 @@
 import React, {useState, FormEvent, memo} from 'react';
+import Button from "@/components/Button/Button";
+
+import styles from './BikeForm.module.scss';
 
 type BikeFormProps = {
 	initialUser: string;
@@ -15,7 +18,7 @@ const BikeForm = memo<BikeFormProps>(({ initialUser, status, onSubmit }) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className={styles.form}>
 			{status === 'Inactive' && (
 				<input
 					type="text"
@@ -23,11 +26,10 @@ const BikeForm = memo<BikeFormProps>(({ initialUser, status, onSubmit }) => {
 					value={user}
 					onChange={(e) => setUser(e.target.value)}
 					required
+					className={styles.input}
 				/>
 			)}
-			<button type="submit">
-				{status === 'Active' ? 'Set Inactive' : 'Set Active'}
-			</button>
+			<Button type={"submit"}>{status === 'Active' ? 'Set Inactive' : 'Set Active'}</Button>
 		</form>
 	);
 })

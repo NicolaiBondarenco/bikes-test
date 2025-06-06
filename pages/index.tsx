@@ -1,6 +1,8 @@
-import Layout from '@/components/Layout';
+import Layout from '@/components/Layout/Layout';
 import Link from "next/link";
 import {useState} from "react";
+
+import styles from "./index.module.scss";
 
 const HomePage = () => {
 	const [loading, setLoading] = useState(false);
@@ -11,17 +13,7 @@ const HomePage = () => {
 		<Layout title="Actiune">
 			<Link href="/bikes"
 			  onClick={() => setLoading(true)}
-			  style={{
-					display: 'block',
-					padding: '10px',
-					textAlign: 'center',
-					backgroundColor: '#eee',
-					border: '1px solid #ccc',
-					borderRadius: '5px',
-					textDecoration: 'none',
-					color: '#000',
-					cursor: 'pointer',
-				}}
+			  className={styles.link}
 			>Statut bicicleta</Link>
 		</Layout>
 	);

@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Layout from '@/components/Layout';
-import BikeForm from '@/components/BikeForm'
+import Layout from '@/components/Layout/Layout';
+import BikeForm from '@/components/BikeForm/BikeForm'
+import Button from "@/components/Button/Button";
 
 type Bike = {
 	id: string;
@@ -71,7 +72,7 @@ const BikeDetailPage = () => {
 			{bike.status === 'Active' ? (
 				<>
 					<p><strong>User:</strong> {bike.user}</p>
-					<button onClick={handleSubmit}>Set Inactive</button>
+					<Button onClick={handleSubmit}>Set Inactive</Button>
 				</>
 			) : (
 				<BikeForm

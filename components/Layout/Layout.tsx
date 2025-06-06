@@ -1,6 +1,7 @@
-import React, {memo, useState} from 'react';
+import React, { memo } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import styles from './Layout.module.scss';
 
 type LayoutProps = {
 	title?: string;
@@ -14,17 +15,17 @@ const Layout = memo<LayoutProps>(({ title = 'Bike App', children }) => {
 				<title>{title}</title>
 				<meta name="description" content="Next.js Bike Manager with Google Sheets" />
 			</Head>
-			<header style={{ padding: '10px', background: '#f5f5f5', marginBottom: '10px' }}>
-				<h1 style={{ margin: 0 }}>{title}</h1>
-				<nav style={{ marginTop: '5px' }}>
-					<Link href="/" style={{ marginRight: 10 }}>Home</Link>
-					<Link href="/bikes">Bikes</Link>
+			<header className={styles.header}>
+				<h1 className={styles.title}>{title}</h1>
+				<nav className={styles.nav}>
+					<Link href="/" className={styles.link}>Home</Link>
+					<Link href="/bikes" className={styles.link}>Bikes</Link>
 				</nav>
 			</header>
-			<main style={{ padding: '10px' }}>{children}</main>
+			<main className={styles.main}>{children}</main>
 		</>
 	);
-})
+});
 
 Layout.displayName = 'Layout';
 

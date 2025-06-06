@@ -1,8 +1,10 @@
-import Layout from '@/components/Layout';
-import BikeLink from '@/components/BikeLink';
+import Layout from '@/components/Layout/Layout';
+import BikeLink from '@/components/BikeLink/BikeLink';
 import { getBikesData } from "@/lib/getBikesData";
 import { GetServerSideProps } from "next";
 import {memo} from "react";
+
+import styles from "./index.module.scss";
 
 type Bike = {
 	id: number;
@@ -22,7 +24,7 @@ const BikesPage = memo<BikesPageProps>(({ bikes }) => {
 			{bikes.length === 0 ? (
 				<p>No bikes found.</p>
 			) : (
-				<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
+				<div className={styles.bikesWrapper}>
 					{bikes.map(bike => (
 						<BikeLink key={bike.id} id={bike.id} />
 					))}
